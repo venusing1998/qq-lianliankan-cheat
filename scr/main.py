@@ -336,8 +336,8 @@ def print_matrix(matrix):
 
 
 if __name__ == '__main__':
-    print('*'*20,'begin','*'*20)
-    print('author: Chris')
+    print('*'*20, 'begin', '*'*20, '\n')
+    print('author: Chris\n')
     print('*'*47)
     # each step interval for sleep()
     arg_parse = argparse.ArgumentParser()
