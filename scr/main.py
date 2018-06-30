@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse
 import os
 import time
@@ -323,7 +322,7 @@ def execute_one_step(one_step,
 
 
 def print_matrix(matrix):
-    print('-' * 76)
+    print('*' * 76)
     for row in range(11):
         line = str()
         for col in range(19):
@@ -333,11 +332,13 @@ def print_matrix(matrix):
                 id = '%02d' % matrix[row][col]
             line += '%s  ' % id
         print(line)
-    print('-' * 76)
+    print('*' * 76)
 
 
 if __name__ == '__main__':
-    print('<!-- begin -->')
+    print('*'*20,'begin','*'*20)
+    print('author: Chris')
+    print('*'*47)
     # each step interval for sleep()
     arg_parse = argparse.ArgumentParser()
     arg_parse.add_argument('--interval', type=float, default=0.0)
@@ -361,7 +362,7 @@ if __name__ == '__main__':
     print("The size of game's windows is: ", window_left,
           window_top, window_right, window_bottom)
     print('游戏即将开始，请保持游戏窗口前置。')
-    print('\n\n\n' + '-' * 76)
+    print('\n\n\n' + '*' * 76)
 
     if min(window_left, window_top) < 0\
             or window_right > screen_width\
@@ -405,7 +406,6 @@ if __name__ == '__main__':
             one_step = solve_matrix_one_step(id_matrix)
             if not one_step:
                 print('solved')
-                print('<!-- end -->')
                 exit(0)
             print(one_step)
             execute_one_step(one_step,
